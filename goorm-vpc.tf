@@ -82,6 +82,7 @@ resource "aws_internet_gateway" "goorm-igw" {
   }
 }
 
+# NAT
 resource "aws_eip" "goorm-nat-eip" {
 	domain = "vpc"
 }
