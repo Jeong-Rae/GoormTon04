@@ -5,8 +5,6 @@ resource "aws_lb" "web-lb" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.goorm-sg.id]
   subnets            = [aws_subnet.web-public-subnet-a.id, aws_subnet.web-public-subnet-c.id]
-
-  enable_deletion_protection = false
 }
 
 # Web ALB Target Group
