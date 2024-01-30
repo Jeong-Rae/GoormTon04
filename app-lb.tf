@@ -1,7 +1,6 @@
 # App NLB
 resource "aws_lb" "app-lb" {
   name               = "app-lb"
-  internal           = false
   load_balancer_type = "network"
   security_groups    = [aws_security_group.goorm-sg.id]
   subnets            = [aws_subnet.app-private-subnet-a.id, aws_subnet.app-private-subnet-c.id]
@@ -11,6 +10,7 @@ resource "aws_lb" "app-lb" {
 resource "aws_lb_target_group" "app-tg" {
   name     = "app-target-group"
   protocol = "TCP"
+  port = 8080
   vpc_id   = aws_vpc.goorm-vpc.id
 }
 
