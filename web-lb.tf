@@ -10,7 +10,7 @@ resource "aws_lb" "web-lb" {
 # Web ALB Target Group
 resource "aws_lb_target_group" "web-tg" {
   name     = "web-target-group"
-  port     = 80
+  port     = 8080
   protocol = "HTTP"
   vpc_id   = aws_vpc.goorm-vpc.id
 }
