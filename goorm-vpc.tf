@@ -12,6 +12,8 @@ resource "aws_subnet" "web-public-subnet-a" {
   vpc_id            = aws_vpc.goorm-vpc.id
   cidr_block        = "10.0.0.0/20"
   availability_zone = "ap-northeast-2a"
+  map_public_ip_on_launch = true
+
 
   tags = {
     Name = "WebPublicSubnetA"
@@ -23,6 +25,8 @@ resource "aws_subnet" "web-public-subnet-c" {
   vpc_id            = aws_vpc.goorm-vpc.id
   cidr_block        = "10.0.16.0/20"
   availability_zone = "ap-northeast-2c"
+  map_public_ip_on_launch = true
+
 
   tags = {
     Name = "WebPublicSubnetC"
